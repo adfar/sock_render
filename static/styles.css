@@ -128,7 +128,7 @@ h1.title {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border: 3px solid #ff6b6b;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .group::before {
@@ -165,18 +165,15 @@ h1.title {
 svg {
     filter: drop-shadow(0px 0px 8px rgb(255 107 107 / 0.6));
     -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
-    mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
     animation: shimmer 5s infinite;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     align-self: center;
     border-radius: 0;
     background: none;
-    padding: 0;
+    padding: 1vh 0;
     width: 90%;
-    height: auto;
-    max-height: 15vh;
-    overflow: visible;
+    height: 13vh;
 }
 
 .click {
