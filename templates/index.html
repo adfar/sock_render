@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Socket!</title>
+        <title>🎡 Sweet Treats Pavilion 🍭</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,11 +11,15 @@
         </script>
     </head>
     <body id="main">
+        <header class="park-header">
+            <h1 class="main-title">🎡 Sweet Treats Pavilion 🍭</h1>
+            <p class="park-subtitle">Delicious treats for your magical day!</p>
+        </header>
         <div class="columns">
             <div class="column">
                 <div class="group">
                     <div class="items">
-                        <h1 class="title">Fresh Fudge!</h1>
+                        <h1 class="title">🍫 Fresh Fudge!</h1>
                         {% for item in fudges %}
                             <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item"><span class="item_name">{{ item.name }}</span> 
                                 <span class="price">
@@ -30,7 +34,7 @@
                         <img id="fudge_img" src="/static/PBC.png">
                     </div>
                     <div class="items">
-                        <h1 class="title">Chocolate Dipped Treats!</h1>
+                        <h1 class="title">🍓 Chocolate Dipped Treats!</h1>
                         {% for item in chocolates %}
                             <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item"><span class="item_name">{{ item.name }}</span>
                                 <span class="price">
@@ -48,7 +52,7 @@
             <div class="column">
                     <div class="group">
                         <div class="items">
-                            <h1 class="title">Apples!</h1>
+                            <h1 class="title">🍎 Caramel Apples!</h1>
                             {% for item in apples %}
                                 <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item"><span class="item_name">{{ item.name }}</span>
                                     <span class="price">
@@ -63,7 +67,7 @@
                         </div>
                         <img id="caramel_img" src="/static/caramel.png">
                         <div class="items">
-                            <h1 class="title">Candy!</h1>
+                            <h1 class="title">🍬 Candy Wonderland!</h1>
                             {% for item in candies %}
                                 <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item"><span class="item_name">{{ item.name }}</span>
                                     <span class="price">
@@ -77,27 +81,38 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <svg id="special" viewbox="0 0 300 300">
-                            <path id="top" d="M 14 100 a 138 82 0 0 1 274, 0"/>
-                            <path id="bottom" d="M 2 100 a 148 82 0 0 0 296, 0"/>
-                            <ellipse cx="150" cy="100" rx="148" ry="94" fill="#ede7f6" />
-                            <text text-anchor="middle" font-size="20px">
-                                <textPath href="#top" startOffset="50%">
-                                    Buy Four Pieces
-                                </textPath>
-                                <textPath href="#bottom" startOffset="50%">
-                                    Get Two Free!
-                                </textPath>
-                            </text>
-                            <style>
-                                #fudge_special {font : italic 32px serif; fill : #26418f;}
-                            </style>
-                            <text id="fudge_special" x="55" y="106">Fudge Special!</text>
+                    <svg id="special" viewBox="0 0 400 300" style="background: none;">
+                        <defs>
+                            <linearGradient id="specialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#ffd93d;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#1976d2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path id="top" d="M 30 125 a 185 125 0 0 1 370, 0"/>
+                        <path id="bottom" d="M 30 175 a 185 125 0 0 0 370, 0"/>
+                        <ellipse cx="200" cy="150" rx="242" ry="163" fill="url(#specialGrad)" stroke="#fff" stroke-width="4"/>
+                        <text text-anchor="middle" font-size="22px" font-family="Comic Sans MS, cursive" font-weight="bold" fill="#fff" stroke="#000" stroke-width="0.5">
+                            <textPath href="#top" startOffset="50%">
+                                🎉 Buy Four Pieces 🎉
+                            </textPath>
+                            <textPath href="#bottom" startOffset="50%">
+                                ⭐ Get Two Free! ⭐
+                            </textPath>
+                        </text>
+                        <style>
+                            #fudge_special {font: bold 42px 'Comic Sans MS', cursive; fill: url(#textGrad); stroke: #fff; stroke-width: 1;}
+                        </style>
+                        <text id="fudge_special" x="200" y="150" text-anchor="middle" dominant-baseline="central">🍫 Fudge Special! 🍫</text>
                     </svg>
                 </div>
             <div class="column">
                 <div class="group">
-                    <h1 class="title">Soft Drinks!</h1>
+                    <h1 class="title">🥤 Refreshing Beverages!</h1>
                     {% for item in drinks %}
                         <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item"><span class="item_name">{{ item.name }}</span>
                             <span class="price">
