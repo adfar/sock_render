@@ -171,9 +171,9 @@ svg {
     align-self: center;
     border-radius: 0;
     background: none;
-    padding: 1vh 0;
+    padding: 0;
     width: 90%;
-    height: 16vh;
+    height: 20vh;
 }
 
 .click {
