@@ -52,4 +52,4 @@ def click():
     return render_template('click.html', items=Item.query.all())
 
 if __name__ == '__main__':
-    socketio.run(app, port='8080', host='0.0.0.0')
+    socketio.run(app, port=8080, host='0.0.0.0')
