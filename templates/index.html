@@ -81,34 +81,11 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <svg id="special" viewBox="0 0 500 350" style="background: none;">
-                        <defs>
-                            <linearGradient id="specialGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                                <stop offset="50%" style="stop-color:#ffd93d;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#d32f2f;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#1976d2;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <path id="top" d="M 50 145 a 200 140 0 0 1 400, 0"/>
-                        <path id="bottom" d="M 50 205 a 200 140 0 0 0 400, 0"/>
-                        <ellipse cx="250" cy="175" rx="240" ry="160" fill="url(#specialGrad)" stroke="#fff" stroke-width="4"/>
-                        <text text-anchor="middle" font-size="22px" font-family="Comic Sans MS, cursive" font-weight="bold" fill="#fff" stroke="#000" stroke-width="0.5">
-                            <textPath href="#top" startOffset="50%">
-                                🎉 Buy Four Pieces 🎉
-                            </textPath>
-                            <textPath href="#bottom" startOffset="50%">
-                                ⭐ Get Two Free! ⭐
-                            </textPath>
-                        </text>
-                        <style>
-                            #fudge_special {font: bold 42px 'Comic Sans MS', cursive; fill: url(#textGrad); stroke: #fff; stroke-width: 1;}
-                        </style>
-                        <text id="fudge_special" x="250" y="175" text-anchor="middle" dominant-baseline="central">🍫 Fudge Special! 🍫</text>
-                    </svg>
+                    <div id="special">
+                        <div class="special-text">🎉 Buy Four Pieces 🎉</div>
+                        <div class="fudge-special">🍫 Fudge Special! 🍫</div>
+                        <div class="special-text">⭐ Get Two Free! ⭐</div>
+                    </div>
                 </div>
             <div class="column">
                 <div class="group">
@@ -129,7 +106,7 @@
                         <li>
                             <div id="{{ item.name }}" class="{{ item.status|string|lower }} menu_item">
                                 <span class="item_name">{{ item.name }}</span>
-                                <span>
+                                <span class="price">
                                     {% if not item.status %}
                                         Sold Out
                                     {% endif %}

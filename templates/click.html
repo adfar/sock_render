@@ -13,11 +13,11 @@
                     <label for="{{ item.name }}" id="{{ item.name }}_label" class="item_label">{{ item.name }}</label>
                     <div class="control">
                         {% if item.status %}
-                            <button id="{{ item.name }}" class="button is-danger">
+                            <button id="{{ item.name }}" class="button is-primary">
                             Out
                             </button>
                         {% else %}
-                        <button id="{{ item.name }}" class="button is-primary">
+                        <button id="{{ item.name }}" class="button is-danger">
                             In
                         </button>
                         {% endif %} 
@@ -31,8 +31,8 @@
         document.querySelectorAll('.menu_item').forEach(function(form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                form.children[1].children[0].classList.toggle('is-primary');
                 form.children[1].children[0].classList.toggle('is-danger');
+                form.children[1].children[0].classList.toggle('is-primary');
                 form.children[1].children[0].innerHTML = form.children[1].children[0].innerHTML ==='In' ? 'Out' : 'In';
                 const payload = new FormData(form);
                 fetch("/click", {
